@@ -115,7 +115,6 @@ import ErrorMessage from "./components/ErrorMessage.vue";
 import LoadingSpinner from "./components/LoadingSpinner.vue";
 import TypeFilter from "./components/TypeFilter.vue";
 
-// Estado da aplicação
 const pokemon = ref(null);
 const isLoading = ref(false);
 const error = ref(null);
@@ -123,7 +122,6 @@ const totalFetched = ref(0);
 const isFirstLoad = ref(true);
 const selectedType = ref(null);
 
-// Computed properties
 const hasData = computed(
   () => pokemon.value && !isLoading.value && !error.value
 );
@@ -162,7 +160,6 @@ const loadingMessage = computed(() => {
   return "Loading a new Pokémon...";
 });
 
-// Métodos
 const loadPokemon = async (typeFilter = null) => {
   isLoading.value = true;
   error.value = null;
@@ -193,7 +190,6 @@ const loadNewPokemon = () => {
   loadPokemon(selectedType.value);
 };
 
-// Keyboard events
 const handleKeyPress = (event) => {
   if (event.code === "Space" && !isLoading.value) {
     event.preventDefault();
@@ -206,7 +202,6 @@ const handleKeyPress = (event) => {
   }
 };
 
-// Lifecycle hooks
 onMounted(() => {
   loadPokemon();
   document.addEventListener("keydown", handleKeyPress);

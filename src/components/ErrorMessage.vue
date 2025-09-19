@@ -78,7 +78,6 @@ const handleRetry = () => {
   }
 }
 
-/* Hover effects */
 button:hover {
   transform: scale(1.05) translateY(-2px);
 }
@@ -87,7 +86,6 @@ button:active {
   transform: scale(1);
 }
 
-/* Transições suaves */
 .transform {
   transition: transform 0.2s ease-in-out;
 }

@@ -74,10 +74,6 @@ const filterStatusMessage = computed(() => {
   return `Showing only Pokémon of type ${props.selectedType}`;
 });
 
-const hasActiveFilter = computed(() => {
-  return Boolean(props.selectedType);
-});
-
 const selectType = (type) => {
   if (props.isLoading) return;
 
